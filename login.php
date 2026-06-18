@@ -30,7 +30,6 @@ if(isset($_POST['login'])){
 
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
 
 <meta charset="UTF-8">
@@ -38,44 +37,90 @@ if(isset($_POST['login'])){
 
 <title>Login Admin - Sistem Bansos</title>
 
-<link
-href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
 
 body{
-    background: #f4f6f9;
+    background: linear-gradient(135deg,#eaf2ff,#f8fbff);
+    min-height:100vh;
+    font-family:'Segoe UI',sans-serif;
 }
 
-.login-box{
-    margin-top: 80px;
+.login-container{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
 }
 
-.card{
-    border: none;
-    border-radius: 15px;
+.login-card{
+    width:1000px;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
-.card-header{
-    background: #0d6efd;
-    color: white;
-    text-align: center;
-    font-size: 24px;
-    font-weight: bold;
-    border-radius: 15px 15px 0 0 !important;
-    padding: 20px;
+.left-panel{
+    background:linear-gradient(135deg,#0d6efd,#3b82f6);
+    color:white;
+    padding:60px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    height:100%;
+}
+
+.left-panel h1{
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.left-panel p{
+    font-size:18px;
+}
+
+.left-panel ul{
+    margin-top:20px;
+}
+
+.left-panel li{
+    margin-bottom:10px;
+}
+
+.right-panel{
+    padding:60px;
+}
+
+.right-panel h2{
+    font-weight:bold;
+    color:#0d6efd;
+}
+
+.form-control{
+    border-radius:10px;
+    padding:12px;
 }
 
 .btn-login{
-    background: #0d6efd;
-    color: white;
-    font-weight: bold;
+    background:#0d6efd;
+    color:white;
+    font-weight:bold;
+    border:none;
+    padding:12px;
+    border-radius:10px;
 }
 
 .btn-login:hover{
-    background: #0b5ed7;
-    color: white;
+    background:#0b5ed7;
+    color:white;
+}
+
+.logo{
+    font-size:70px;
+    margin-bottom:20px;
 }
 
 </style>
@@ -84,82 +129,101 @@ body{
 
 <body>
 
-<div class="container">
+<div class="login-container">
 
-<div class="row justify-content-center">
+    <div class="login-card">
 
-<div class="col-md-4 login-box">
+        <div class="row g-0">
 
-<div class="card shadow">
+            <!-- PANEL KIRI -->
+            <div class="col-md-6 left-panel">
 
-<div class="card-header">
-Sistem Bansos
-</div>
+                <div class="logo">
+                    🏠
+                </div>
 
-<div class="card-body p-4">
+                <h1>Sistem Informasi Bantuan Sosial</h1>
 
-<h4 class="text-center mb-4">
-Login Admin
-</h4>
+                <p>
+                    Sistem untuk mengelola data penerima bantuan sosial secara cepat, mudah, dan terstruktur.
+                </p>
 
-<?php if(isset($error)){ ?>
+                <hr>
 
-<div class="alert alert-danger">
-<?= $error; ?>
-</div>
+                <h5>Fitur Sistem</h5>
 
-<?php } ?>
+                <ul>
+                    <li>📋 Pendataan Warga</li>
+                    <li>🎁 Data Bantuan</li>
+                    <li>🚚 Distribusi Bantuan</li>
+                    <li>📊 Laporan Penerima</li>
+                </ul>
 
-<form method="POST">
+            </div>
 
-<div class="mb-3">
+            <!-- PANEL KANAN -->
+            <div class="col-md-6 right-panel">
 
-<label class="form-label">
-Username
-</label>
+                <h2 class="text-center mb-4">
+                    Login Admin
+                </h2>
 
-<input
-type="text"
-name="username"
-class="form-control"
-placeholder="Masukkan Username"
-required>
+                <?php if(isset($error)){ ?>
 
-</div>
+                <div class="alert alert-danger">
+                    <?= $error; ?>
+                </div>
 
-<div class="mb-3">
+                <?php } ?>
 
-<label class="form-label">
-Password
-</label>
+                <form method="POST">
 
-<input
-type="password"
-name="password"
-class="form-control"
-placeholder="Masukkan Password"
-required>
+                    <div class="mb-3">
 
-</div>
+                        <label class="form-label">
+                            Username
+                        </label>
 
-<button
-type="submit"
-name="login"
-class="btn btn-login w-100">
+                        <input
+                        type="text"
+                        name="username"
+                        class="form-control"
+                        placeholder="Masukkan Username"
+                        required>
 
-Login
+                    </div>
 
-</button>
+                    <div class="mb-3">
 
-</form>
+                        <label class="form-label">
+                            Password
+                        </label>
 
-</div>
+                        <input
+                        type="password"
+                        name="password"
+                        class="form-control"
+                        placeholder="Masukkan Password"
+                        required>
 
-</div>
+                    </div>
 
-</div>
+                    <button
+                    type="submit"
+                    name="login"
+                    class="btn btn-login w-100">
 
-</div>
+                        Login
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </div>
 
