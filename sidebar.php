@@ -41,10 +41,12 @@
         </li>
 
         <li>
-            <a href="logout.php">
-                🚪 Logout
-            </a>
-        </li>
+            <li class="logout-menu">
+    <a href="logout.php">
+        🚪 Logout
+    </a>
+</li>
+
 
     </ul>
 
