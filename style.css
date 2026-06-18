@@ -12,16 +12,18 @@ body{
     width:250px;
     height:100vh;
     position:fixed;
+    top:0;
+    left:0;
     background:linear-gradient(180deg,#0d6efd,#3b82f6);
-    padding-top:20px;
     box-shadow:4px 0 15px rgba(0,0,0,.1);
+    padding-top:20px;
 }
 
 .sidebar h3{
     color:white;
     text-align:center;
-    margin-bottom:30px;
     font-weight:bold;
+    margin-bottom:30px;
 }
 
 .sidebar ul{
@@ -35,15 +37,35 @@ body{
 
 .sidebar ul li a{
     display:block;
-    padding:12px 15px;
     color:white;
     text-decoration:none;
+    padding:12px 15px;
     border-radius:12px;
-    transition:.3s;
+    transition:0.3s;
+    font-size:16px;
 }
 
 .sidebar ul li a:hover{
     background:rgba(255,255,255,.2);
+}
+
+/* LOGOUT */
+
+.logout-menu{
+    position:absolute;
+    bottom:20px;
+    width:220px;
+}
+
+.logout-menu a{
+    background:#dc3545;
+    color:white !important;
+    text-align:center;
+    font-weight:bold;
+}
+
+.logout-menu a:hover{
+    background:#bb2d3b !important;
 }
 
 /* CONTENT */
@@ -65,6 +87,11 @@ body{
     box-shadow:0 10px 25px rgba(0,0,0,.08)!important;
 }
 
+.card-header{
+    border:none;
+    font-weight:bold;
+}
+
 .card-body h1{
     font-size:45px;
 }
@@ -73,7 +100,119 @@ body{
     font-weight:bold;
 }
 
-.card-header{
+/* BUTTON */
+
+.btn{
+    border-radius:10px;
+    font-weight:600;
+}
+
+.btn-primary{
+    background:#0d6efd;
     border:none;
+}
+
+.btn-primary:hover{
+    background:#0b5ed7;
+}
+
+.btn-warning{
+    color:white;
     font-weight:bold;
+}
+
+.btn-danger{
+    font-weight:bold;
+}
+
+/* TABLE */
+
+.table{
+    background:white;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.table thead{
+    background:#0d6efd;
+    color:white;
+}
+
+.table th{
+    text-align:center;
+    vertical-align:middle;
+}
+
+.table td{
+    vertical-align:middle;
+}
+
+.table-hover tbody tr:hover{
+    background:#f1f6ff;
+}
+
+/* TITLE */
+
+.page-title{
+    color:#0d6efd;
+    font-weight:bold;
+}
+
+/* INFO BOX */
+
+.info-box{
+    background:linear-gradient(135deg,#0d6efd,#3b82f6);
+    color:white;
+    border-radius:20px;
+    padding:25px;
+    margin-bottom:25px;
+}
+
+.info-box h3{
+    margin:0;
+    font-weight:bold;
+}
+
+.info-box p{
+    margin-top:10px;
+    margin-bottom:0;
+}
+
+/* STATUS BADGE */
+
+.badge-aktif{
+    background:#198754;
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+.badge-nonaktif{
+    background:#dc3545;
+    color:white;
+    padding:6px 12px;
+    border-radius:20px;
+    font-size:13px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:768px){
+
+    .sidebar{
+        width:100%;
+        height:auto;
+        position:relative;
+    }
+
+    .content{
+        margin-left:0;
+    }
+
+    .logout-menu{
+        position:relative;
+        bottom:auto;
+        width:auto;
+    }
 }
