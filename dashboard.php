@@ -1,3 +1,4 @@
+```php
 <?php
 session_start();
 
@@ -40,14 +41,14 @@ $distribusi = mysqli_num_rows(
 <div class="col-md-8">
 
 <h2 class="fw-bold text-primary">
-Dashboard Sistem Informasi Bantuan Sosial
+🏠 Dashboard Sistem Informasi Bantuan Sosial
 </h2>
 
 <p class="text-muted">
 Selamat datang di Sistem Informasi Bantuan Sosial.
 Sistem ini digunakan untuk membantu proses pendataan,
 verifikasi, pengelolaan bantuan, dan distribusi bantuan
-kepada masyarakat.
+kepada masyarakat secara lebih cepat dan terstruktur.
 </p>
 
 </div>
@@ -58,8 +59,8 @@ kepada masyarakat.
 <?= date('d F Y'); ?>
 </h5>
 
-<p class="text-secondary">
-Administrator
+<p class="text-primary fw-semibold">
+👤 Administrator
 </p>
 
 </div>
@@ -68,9 +69,12 @@ Administrator
 
 <div class="row">
 
-<div class="col-md-3 mb-4">
+<!-- TOTAL WARGA -->
+<div class="col-md-4 mb-4">
 <div class="card shadow">
-<div class="card-body text-center">
+
+<div class="card-body text-center text-white"
+style="background:linear-gradient(135deg,#0d6efd,#3b82f6);">
 
 <h1>👨‍👩‍👧‍👦</h1>
 
@@ -79,12 +83,16 @@ Administrator
 <h2><?= $warga; ?></h2>
 
 </div>
+
 </div>
 </div>
 
-<div class="col-md-3 mb-4">
+<!-- PENDATAAN -->
+<div class="col-md-4 mb-4">
 <div class="card shadow">
-<div class="card-body text-center">
+
+<div class="card-body text-center text-white"
+style="background:linear-gradient(135deg,#198754,#22c55e);">
 
 <h1>📝</h1>
 
@@ -93,12 +101,16 @@ Administrator
 <h2><?= $pendataan; ?></h2>
 
 </div>
+
 </div>
 </div>
 
-<div class="col-md-3 mb-4">
+<!-- VERIFIKASI -->
+<div class="col-md-4 mb-4">
 <div class="card shadow">
-<div class="card-body text-center">
+
+<div class="card-body text-center text-white"
+style="background:linear-gradient(135deg,#6f42c1,#8b5cf6);">
 
 <h1>✅</h1>
 
@@ -107,12 +119,16 @@ Administrator
 <h2><?= $verifikasi; ?></h2>
 
 </div>
+
 </div>
 </div>
 
-<div class="col-md-3 mb-4">
+<!-- BANTUAN -->
+<div class="col-md-6 mb-4">
 <div class="card shadow">
-<div class="card-body text-center">
+
+<div class="card-body text-center text-white"
+style="background:linear-gradient(135deg,#f59e0b,#fbbf24);">
 
 <h1>🎁</h1>
 
@@ -121,12 +137,16 @@ Administrator
 <h2><?= $bantuan; ?></h2>
 
 </div>
+
 </div>
 </div>
 
-<div class="col-md-3 mb-4">
+<!-- DISTRIBUSI -->
+<div class="col-md-6 mb-4">
 <div class="card shadow">
-<div class="card-body text-center">
+
+<div class="card-body text-center text-white"
+style="background:linear-gradient(135deg,#dc3545,#ef4444);">
 
 <h1>🚚</h1>
 
@@ -135,6 +155,7 @@ Administrator
 <h2><?= $distribusi; ?></h2>
 
 </div>
+
 </div>
 </div>
 
@@ -144,7 +165,7 @@ Administrator
 
 <div class="card-header bg-primary text-white">
 
-Informasi Sistem
+📌 Informasi Sistem
 
 </div>
 
@@ -152,18 +173,17 @@ Informasi Sistem
 
 <p>
 Sistem Informasi Bantuan Sosial (SIBANSOS)
-digunakan untuk membantu pengelolaan data
-bantuan sosial mulai dari pendataan warga,
-verifikasi penerima bantuan, pengelolaan bantuan,
-hingga proses distribusi bantuan.
+digunakan untuk membantu pengelolaan data bantuan sosial
+mulai dari pendataan warga, verifikasi penerima bantuan,
+pengelolaan bantuan, hingga proses distribusi bantuan.
 </p>
 
 <ul>
-<li>Data Warga</li>
-<li>Pendataan Penerima Bantuan</li>
-<li>Verifikasi Data</li>
-<li>Pengelolaan Bantuan</li>
-<li>Distribusi Bantuan</li>
+<li>👨‍👩‍👧‍👦 Data Warga</li>
+<li>📝 Pendataan Penerima Bantuan</li>
+<li>✅ Verifikasi Data</li>
+<li>🎁 Pengelolaan Bantuan</li>
+<li>🚚 Distribusi Bantuan</li>
 </ul>
 
 </div>
@@ -177,3 +197,4 @@ hingga proses distribusi bantuan.
 <?php
 include 'footer.php';
 ?>
+```
