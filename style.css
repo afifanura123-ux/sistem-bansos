@@ -1,0 +1,79 @@
+/* BODY */
+
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#eaf2ff,#f8fbff);
+}
+
+/* SIDEBAR */
+
+.sidebar{
+    width:250px;
+    height:100vh;
+    position:fixed;
+    background:linear-gradient(180deg,#0d6efd,#3b82f6);
+    padding-top:20px;
+    box-shadow:4px 0 15px rgba(0,0,0,.1);
+}
+
+.sidebar h3{
+    color:white;
+    text-align:center;
+    margin-bottom:30px;
+    font-weight:bold;
+}
+
+.sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.sidebar ul li{
+    margin:8px 15px;
+}
+
+.sidebar ul li a{
+    display:block;
+    padding:12px 15px;
+    color:white;
+    text-decoration:none;
+    border-radius:12px;
+    transition:.3s;
+}
+
+.sidebar ul li a:hover{
+    background:rgba(255,255,255,.2);
+}
+
+/* CONTENT */
+
+.content{
+    margin-left:270px;
+    padding:30px;
+}
+
+/* CARD */
+
+.card{
+    border:none;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.shadow{
+    box-shadow:0 10px 25px rgba(0,0,0,.08)!important;
+}
+
+.card-body h1{
+    font-size:45px;
+}
+
+.card-body h2{
+    font-weight:bold;
+}
+
+.card-header{
+    border:none;
+    font-weight:bold;
+}
