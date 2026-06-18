@@ -14,18 +14,78 @@ $data = mysqli_query($koneksi,
 FROM warga");
 ?>
 
-<div class="content">
+<div class="content p-4">
 
-<h2 class="mb-4">
-Data Warga
+<div class="container-fluid">
+
+<!-- HEADER -->
+
+<div class="row mb-4">
+
+<div class="col-md-8">
+
+<h2 class="fw-bold text-primary">
+👨‍👩‍👧‍👦 Data Warga
 </h2>
+
+<p class="text-muted">
+Data warga yang terdaftar dalam Sistem Informasi Bantuan Sosial (SIBANSOS).
+Data ini digunakan sebagai dasar pendataan dan penyaluran bantuan sosial.
+</p>
+
+</div>
+
+<div class="col-md-4 text-end">
+
+<h5>
+<?= date('d F Y'); ?>
+</h5>
+
+</div>
+
+</div>
+
+<!-- CARD INFORMASI -->
+
+<div class="card shadow mb-4">
+
+<div class="card-body text-white"
+style="background:linear-gradient(135deg,#0d6efd,#3b82f6);">
+
+<h4>👨‍👩‍👧‍👦 Informasi Data Warga</h4>
+
+<p class="mb-0">
+Kelola data warga penerima bantuan sosial secara mudah, cepat, dan terstruktur.
+</p>
+
+</div>
+
+</div>
+
+<!-- TOMBOL TAMBAH -->
 
 <a href="tambahwarga.php"
 class="btn btn-primary mb-3">
-Tambah Data
+➕ Tambah Data Warga
 </a>
 
-<table class="table table-bordered table-striped">
+<!-- TABEL -->
+
+<div class="card shadow">
+
+<div class="card-header bg-primary text-white">
+
+📋 Daftar Data Warga
+
+</div>
+
+<div class="card-body">
+
+<div class="table-responsive">
+
+<table class="table table-hover align-middle">
+
+<thead class="table-primary">
 
 <tr>
     <th>No</th>
@@ -37,6 +97,10 @@ Tambah Data
     <th>Aksi</th>
 </tr>
 
+</thead>
+
+<tbody>
+
 <?php
 $no = 1;
 
@@ -46,24 +110,42 @@ while($d = mysqli_fetch_array($data)){
 <tr>
 
 <td><?= $no++; ?></td>
+
 <td><?= $d['nik']; ?></td>
-<td><?= $d['nama']; ?></td>
+
+<td>
+<b><?= $d['nama']; ?></b>
+</td>
+
 <td><?= $d['alamat']; ?></td>
-<td><?= $d['bantuan']; ?></td>
-<td><?= $d['status']; ?></td>
+
+<td>
+🎁 <?= $d['bantuan']; ?>
+</td>
 
 <td>
 
-<a href="editwarga.php?id=
-<?= $d['id']; ?>"
+<?php
+if(strtolower($d['status']) == 'aktif'){
+    echo '<span class="badge bg-success">Aktif</span>';
+}else{
+    echo '<span class="badge bg-secondary">'.$d['status'].'</span>';
+}
+?>
+
+</td>
+
+<td>
+
+<a href="editwarga.php?id=<?= $d['id']; ?>"
 class="btn btn-warning btn-sm">
-Edit
+✏️ Edit
 </a>
 
-<a href="hapuswarga.php?id=
-<?= $d['id']; ?>"
-class="btn btn-danger btn-sm">
-Hapus
+<a href="hapuswarga.php?id=<?= $d['id']; ?>"
+class="btn btn-danger btn-sm"
+onclick="return confirm('Yakin ingin menghapus data ini?')">
+🗑️ Hapus
 </a>
 
 </td>
@@ -72,7 +154,17 @@ Hapus
 
 <?php } ?>
 
+</tbody>
+
 </table>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
 
 </div>
 
